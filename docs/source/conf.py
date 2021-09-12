@@ -79,16 +79,16 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 #import sphinx_rtd_theme
-html_theme =  'sphinx_typo3_theme' # "sphinx_rtd_theme"
+html_theme =   "sphinx_rtd_theme" #'sphinx_typo3_theme_custom'
 #html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_theme_path = ["_themes"]
-html_logo = "logo.svg"
+html_logo = "img/logo.svg"
 #html_theme_logo = "img/logo.svg"
 html_theme_options = {
-    #'logo_only': True,                         # for sphinx_rtd_theme 
-    #'display_version': True,                   # for sphinx_rtd_theme 
-    #'prev_next_buttons_location': 'bottom',    # for sphinx_rtd_theme
-    #'style_external_links': False,             # for sphinx_rtd_theme
+    'logo_only': True,                         # for sphinx_rtd_theme 
+    'display_version': True,                   # for sphinx_rtd_theme 
+    'prev_next_buttons_location': 'bottom',    # for sphinx_rtd_theme
+    'style_external_links': False,             # for sphinx_rtd_theme
 }
 # Enable labeling for figures
 numfig = True
