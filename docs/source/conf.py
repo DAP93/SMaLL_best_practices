@@ -40,7 +40,7 @@ extensions = [
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive', 'myst_nb', 'sphinx.ext.extlinks',
     'sphinx.ext.mathjax', 'sphinx_copybutton', 'sphinx_panels', 'sphinx_tabs.tabs',
-    'sphinx_rtd_theme',
+    'sphinx_rtd_theme', 'sphinx_typo3_theme',
     #'sphinx_fontawesome'
 ]
 
@@ -79,15 +79,16 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 #import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
+html_theme =  'sphinx_typo3_theme_custom' # "sphinx_rtd_theme"
 #html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_theme_path = ["_themes"]
 html_logo = "logo.svg"
+#html_theme_logo = "img/logo.svg"
 html_theme_options = {
-    'logo_only': True,
-    'display_version': True,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
+    #'logo_only': True,                         # for sphinx_rtd_theme 
+    #'display_version': True,                   # for sphinx_rtd_theme 
+    #'prev_next_buttons_location': 'bottom',    # for sphinx_rtd_theme
+    #'style_external_links': False,             # for sphinx_rtd_theme
 }
 # Enable labeling for figures
 numfig = True
