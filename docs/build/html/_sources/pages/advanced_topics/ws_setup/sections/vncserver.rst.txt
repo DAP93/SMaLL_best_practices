@@ -96,7 +96,7 @@ Here we propose 3 possible options, from the simplest DE to the most aesthetic.
 
                 $ sudo add-apt-repository ppa:ubuntudde-dev/stable
 
-        #. Update the `apt` repository
+        #. Update the ``apt`` repository
 
             .. code-block:: bash 
 
@@ -115,13 +115,13 @@ Set up VNC session for each user
 --------------------------------
 
 To avoid interference between different users, the server must be set up for each user. 
-We will assume that on our machine there are 3 users `test1`, `test2` and `test3`.
+We will assume that on our machine there are 3 users ``test1``, ``test2`` and ``test3``.
 
 .. warning::
         Please note, you are accessing the machine as several users using super user permissions. 
         So be very careful and avoid doing any damage!
 
-#. Login to `test1` using the root privilages.
+#. Login to ``test1`` using the root privilages.
 
     .. code-block:: bash 
 
@@ -131,7 +131,7 @@ We will assume that on our machine there are 3 users `test1`, `test2` and `test3
 
             $ su - test1 # loging as test1
 
-#. Now initiate the vnc configuration for `test1`. This will create the hidden folder `.vnc` with all the default configuration files.
+#. Now initiate the vnc configuration for ``test1``. This will create the hidden folder ``.vnc`` with all the default configuration files.
 
     .. code-block:: bash 
 
@@ -157,12 +157,28 @@ We will assume that on our machine there are 3 users `test1`, `test2` and `test3
 
             $ vim xstartup
 
-    Inside the file copy and paste the following line, and chage the row 10 to set the choose Desktop Environment.
+    Inside the file copy and paste the following lines according the choose Desktop Environment.
 
-    .. literalinclude:: ./inputs/xstartup
-        :language: bash
-        :emphasize-lines: 10
-        :linenos:
+    .. tabs::
+
+        .. tab:: XFCE (fast)
+
+            .. literalinclude:: ./inputs/xstartup_xfce4
+                :language: bash
+                :linenos:
+
+        .. tab:: GNOME (classic)
+
+            .. literalinclude:: ./inputs/xstartup_gnome
+                :language: bash
+                :linenos:
+
+        .. tab:: Deepin DE (fancy)
+
+            .. literalinclude:: ./inputs/xstartup_dde
+                :language: bash
+                :linenos:
+
 
     Make the file executable
 
@@ -170,7 +186,7 @@ We will assume that on our machine there are 3 users `test1`, `test2` and `test3
 
             $ chmod +x xstartup
 
-**Repeat all the step for all the users** (eg. `test2`)
+**Repeat all the step for all the users** (eg. ``test2``)
 
 .. note::
     If you what to chage the VNC server password you can use the following command:
@@ -183,10 +199,10 @@ We will assume that on our machine there are 3 users `test1`, `test2` and `test3
 Running VNC as a Service at startup
 -----------------------------------
 
-With this step we will make crate a `systemd service` that will start the VNC server at each boot.
+With this step we will make crate a ``systemd`` *service* that will start the VNC server at each boot.
 Even this step has to be repeated for each user.
 
-#. Make the `Unit` file.
+#. Make the ``Unit`` file.
 
     .. code-block:: bash
 
@@ -194,7 +210,7 @@ Even this step has to be repeated for each user.
 
     .. code-block:: bash
 
-            $ sudo vim vncserver_test1.service # This is for the `test1` user
+            $ sudo vim vncserver_test1.service # This is for the ``test1`` user
 
     copy and paste the following:
 
@@ -203,7 +219,7 @@ Even this step has to be repeated for each user.
         :emphasize-lines: 7-11
         :linenos:
 
-    replace `USER` with the user name (eg. test1) and `PORT` with a sequential number.
+    replace ``USER`` with the user name (eg. test1) and ``PORT`` with a sequential number.
     Below an example:
 
     .. literalinclude:: ./inputs/vncserver_test1.service
@@ -212,8 +228,8 @@ Even this step has to be repeated for each user.
         :linenos:
 
     .. warning::
-        The number choose for `PORT` will correspond to the last number of the port where the VNC server will listening.
-        For example if `PORT` is 1, the VNC server will be listening on port 5901.
+        The number choose for ``PORT`` will correspond to the last number of the port where the VNC server will listening.
+        For example if ``PORT`` is 1, the VNC server will be listening on port 5901.
 
 #. Reload and start the service.
 
@@ -235,7 +251,7 @@ Even this step has to be repeated for each user.
 
         sudo systemctl status vncserver_test1.service
 
-**Repeat all the step for all the users** (eg. `test2`)
+**Repeat all the step for all the users** (eg. ``test2``)
 
 Now the VNC server is set and it is listening for one port per each user, 
 you can restart the machine and check if the service start at the startup correctly.
@@ -254,14 +270,15 @@ Connect to the VNC Server Through SSH Tunnel
 
     .. note::
         With this command the port 5901 on local computer is connected with the 5901 of the server. 
-        Note that we connect with the `USER` test1, therefore we connect the port 5901 since we set `PORT` as 1 in the 
-        `vncserver_test1.service`.
+        Note that we connect with the ``USER`` test1, therefore we connect the port 5901 since we set ``PORT`` as 1 in the 
+        ``vncserver_test1.service``.
 
 #. Download and install the VNC client, we are using `RealVNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_.
 
-#. Set the defoult qulity to `High`.
+#. Set the defoult qulity to ``High``.
 
-    a. Open RealVNC Preferences `File > Preferences..`.
+    a. Open RealVNC Preferences ``File > Preferences..``.
+
         .. figure:: ./img/RealVNC_preference.png
          :width: 75 %
          :alt: vnc
@@ -269,8 +286,9 @@ Connect to the VNC Server Through SSH Tunnel
 
          RealVNC: Preference 
 
-    #. Go to the `Expert` preference, scroll the list until you find the  `Quality` entry and change the values 
-    from `Auto` to `High` (`Expert > Quality > Value: High`).
+    #. Go to the ``Expert`` preference, scroll the list until you find the  ``Quality`` entry and change the values 
+    from ``Auto`` to ``High`` (``Expert > Quality > Value: High``).
+
         .. figure:: ./img/RealVNC_quality.png
          :width: 75 %
          :alt: vnc
@@ -278,17 +296,17 @@ Connect to the VNC Server Through SSH Tunnel
 
          RealVNC: Expert dialogue window
 
-    #. Click on the button `OK` and close the preferences window.
+    #. Click on the button ``OK`` and close the preferences window.
     
 #. Connect to the VNC server.
 
-    a. Type on the upper bar the andress and press `ENTER`.
+    a. Type on the upper bar the andress and press ``ENTER``.
 
         .. code-block:: bash
 
             localhost:PORT
 
-        Where `PORT` is the user VNC server port, e.g for the user `test1` is `5901`, (therfore it will be `localhost:5901`) 
+        Where ``PORT`` is the user VNC server port, e.g for the user ``test1`` is ``5901``, (therfore it will be ``localhost:5901``) 
 
         .. figure:: ./img/RealVNC_connecting.png
          :width: 75 %
@@ -306,17 +324,17 @@ Connect to the VNC Server Through SSH Tunnel
 
          RealVNC: Authentication pop-up
 
-        .. note::
+        .. warning::
             VNC will show a pop-up warning questioning the security of the connection. 
             This happens because it does not recognize that we are using SSH (Secure SHell) tunneling to connect the two computers. 
             Ignore it! The connection is secure because the SSH protocol encrypts all messages.
 
-    #. ENJOY IT!
+#. ENJOY IT!
 
-        .. figure:: ./img/RealVNC_connected.png
-         :width: 75 %
-         :alt: vnc
-         :align: center
+    .. figure:: ./img/RealVNC_connected.png
+        :width: 75 %
+        :alt: vnc
+        :align: center
 
 
 

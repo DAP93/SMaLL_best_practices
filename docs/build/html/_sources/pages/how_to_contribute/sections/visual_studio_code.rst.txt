@@ -12,18 +12,27 @@ Get Visual Studio Code
 #. Download :download:`Visual Studio Code <https://code.visualstudio.com/Download>` 
 #. Install it
 
-   * **Linux** install the file ``code_x.xx.x-xxxxxxxx_amd64.deb``
-   
-   .. code-block:: bash
+   .. tabs::
 
-      sudo dpkg -i code_x.xx.x-xxxxxxxx_amd64.deb
+      .. tab:: Linux
+      
+         Install the file ``code_x.xx.x-xxxxxxxx_amd64.deb`` with the packages manager
    
-   * **Windows** execute the ``VSCodeUserSetup-x64-x.xx.x.exe`` and follow the istructions.
-   * **MacOS** get Virtual studio code from packages menager ``brew``:
-   
-   .. code-block:: bash
+         .. code-block:: bash
 
-      $ brew cask install visual-studio-code 
+            sudo dpkg -i code_x.xx.x-xxxxxxxx_amd64.deb
+
+      .. tab:: Windows
+   
+         Run (doble click) the ``VSCodeUserSetup-x64-x.xx.x.exe`` and follow the istructions.
+
+      .. tab:: MacOS
+         
+         Get Virtual studio code from packages menager ``brew``:
+   
+         .. code-block:: bash
+
+            $ brew cask install visual-studio-code 
 
 .. _vsc_fig1:
 .. figure:: ../img/virtual_studio_code.png

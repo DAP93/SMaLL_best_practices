@@ -20,33 +20,34 @@ It is a multiplatform program and is usually integrated into different modern te
    can be used in *Windows PowerShell*
 
 
-Installing on Windows
-^^^^^^^^^^^^^^^^^^^^^
+Installation
+^^^^^^^^^^^^
+.. tabs::
 
-#. Get last  :download:`git <https://git-scm.com/download/win>` installation file.
-#. Execute the file ``Git-x.xx.x-64-bit.exe``
-#. Follow the automated installation. 
+   .. tab:: Windows
 
-Installing on Linux
-^^^^^^^^^^^^^^^^^^^
+      #. Get last  :download:`git <https://git-scm.com/download/win>` installation file.
+      #. Execute the file ``Git-x.xx.x-64-bit.exe``
+      #. Follow the automated installation. 
 
-Get ``Git`` from your Linux distribution repository (e.g. ``apt``).
+   .. tab:: Linux
 
-.. code-block:: bash
+      Get ``Git`` from your Linux distribution repository (e.g. ``apt``).
 
-   $ sudo apt install git-all
+      .. code-block:: bash
 
-Installing on macOS
-^^^^^^^^^^^^^^^^^^^
+         $ sudo apt install git-all
 
-There is several ways to install Git on a Mac. The easiest is probably to install the Xcode Command Line Tools 
-and try to run git from the Terminal.
+   .. tab:: MacOS
 
-.. code-block:: bash
+      There is several ways to install Git on a Mac. The easiest is probably to install the Xcode Command Line Tools 
+      and try to run git from the Terminal.
 
-   $ git --version
+      .. code-block:: bash
 
-If you do not have it installed already, it will prompt you to install it.
+         $ git --version
+
+      If you do not have it installed already, it will prompt you to install it.
 
 
 GitHub

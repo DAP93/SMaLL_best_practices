@@ -24,6 +24,7 @@
         <script src="../../../_static/togglebutton.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/tabs.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -55,9 +56,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How to contribute</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. Introduction to Git and GitHub</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#git">1.1. Git</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#installing-on-windows">1.1.1. Installing on Windows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installing-on-linux">1.1.2. Installing on Linux</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installing-on-macos">1.1.3. Installing on macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">1.1.1. Installation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">1.2. GitHub</a><ul>
@@ -117,29 +116,25 @@ It is a multiplatform program and is usually integrated into different modern te
 <p>The following commands assume you are in a <em>Linux environment</em> however, the same commands
 can be used in <em>Windows PowerShell</em></p>
 </div>
-<div class="section" id="installing-on-windows">
-<h3><span class="section-number">1.1.1. </span>Installing on Windows<a class="headerlink" href="#installing-on-windows" title="Permalink to this headline"></a></h3>
-<ol class="arabic simple">
+<div class="section" id="installation">
+<h3><span class="section-number">1.1.1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">MacOS</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><ol class="arabic simple">
 <li><p>Get last  <a class="reference download external" download="" href="https://git-scm.com/download/win"><code class="xref download docutils literal notranslate"><span class="pre">git</span></code></a> installation file.</p></li>
 <li><p>Execute the file <code class="docutils literal notranslate"><span class="pre">Git-x.xx.x-64-bit.exe</span></code></p></li>
 <li><p>Follow the automated installation.</p></li>
 </ol>
-</div>
-<div class="section" id="installing-on-linux">
-<h3><span class="section-number">1.1.2. </span>Installing on Linux<a class="headerlink" href="#installing-on-linux" title="Permalink to this headline"></a></h3>
-<p>Get <code class="docutils literal notranslate"><span class="pre">Git</span></code> from your Linux distribution repository (e.g. <code class="docutils literal notranslate"><span class="pre">apt</span></code>).</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Get <code class="docutils literal notranslate"><span class="pre">Git</span></code> from your Linux distribution repository (e.g. <code class="docutils literal notranslate"><span class="pre">apt</span></code>).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt install git-all
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-on-macos">
-<h3><span class="section-number">1.1.3. </span>Installing on macOS<a class="headerlink" href="#installing-on-macos" title="Permalink to this headline"></a></h3>
-<p>There is several ways to install Git on a Mac. The easiest is probably to install the Xcode Command Line Tools
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>There is several ways to install Git on a Mac. The easiest is probably to install the Xcode Command Line Tools
 and try to run git from the Terminal.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git --version
 </pre></div>
 </div>
 <p>If you do not have it installed already, it will prompt you to install it.</p>
+</div></div>
 </div>
 </div>
 <div class="section" id="id1">

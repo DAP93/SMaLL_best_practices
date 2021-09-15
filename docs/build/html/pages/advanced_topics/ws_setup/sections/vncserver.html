@@ -191,7 +191,7 @@ Ubuntu is the operating system of our workstation.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p>Update the <cite>apt</cite> repository</p>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">apt</span></code> repository</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt update
 </pre></div>
@@ -211,14 +211,14 @@ Ubuntu is the operating system of our workstation.</p>
 <div class="section" id="set-up-vnc-session-for-each-user">
 <span id="vnc-set-up-vnc-session-for-each-user"></span><h2><span class="section-number">2.3. </span>Set up VNC session for each user<a class="headerlink" href="#set-up-vnc-session-for-each-user" title="Permalink to this headline"></a></h2>
 <p>To avoid interference between different users, the server must be set up for each user.
-We will assume that on our machine there are 3 users <cite>test1</cite>, <cite>test2</cite> and <cite>test3</cite>.</p>
+We will assume that on our machine there are 3 users <code class="docutils literal notranslate"><span class="pre">test1</span></code>, <code class="docutils literal notranslate"><span class="pre">test2</span></code> and <code class="docutils literal notranslate"><span class="pre">test3</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please note, you are accessing the machine as several users using super user permissions.
 So be very careful and avoid doing any damage!</p>
 </div>
 <ol class="arabic">
-<li><p>Login to <cite>test1</cite> using the root privilages.</p>
+<li><p>Login to <code class="docutils literal notranslate"><span class="pre">test1</span></code> using the root privilages.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo su <span class="c1"># loging as super user</span>
 </pre></div>
@@ -228,7 +228,7 @@ So be very careful and avoid doing any damage!</p>
 </div>
 </div></blockquote>
 </li>
-<li><p>Now initiate the vnc configuration for <cite>test1</cite>. This will create the hidden folder <cite>.vnc</cite> with all the default configuration files.</p>
+<li><p>Now initiate the vnc configuration for <code class="docutils literal notranslate"><span class="pre">test1</span></code>. This will create the hidden folder <code class="docutils literal notranslate"><span class="pre">.vnc</span></code> with all the default configuration files.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vncserver
 </pre></div>
@@ -250,8 +250,9 @@ not be able to control the mouse and keyboard.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vim xstartup
 </pre></div>
 </div>
-<p>Inside the file copy and paste the following line, and chage the row 10 to set the choose Desktop Environment.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
+<p>Inside the file copy and paste the following lines according the choose Desktop Environment.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">XFCE (fast)</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">GNOME (classic)</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Deepin DE (fancy)</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
 <span class="linenos"> 2</span><span class="nb">unset</span> SESSION_MANAGER
 <span class="linenos"> 3</span><span class="nb">unset</span> DBUS_SESSION_BUS_ADDRESS
 <span class="linenos"> 4</span><span class="nb">export</span> <span class="nv">XKL_XMODMAP_DISABLE</span><span class="o">=</span><span class="m">1</span>
@@ -260,8 +261,8 @@ not be able to control the mouse and keyboard.</p>
 <span class="linenos"> 7</span><span class="nb">export</span> <span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>fcitx
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span><span class="c1">#__using_dde__</span>
-<span class="hll"><span class="linenos">10</span><span class="nv">session</span><span class="o">=</span>startxfce4 <span class="c1"># XFCE=startxfce4 GNOME=gnome-session DeepinDE=startdde</span>
-</span><span class="linenos">11</span>
+<span class="linenos">10</span><span class="nv">session</span><span class="o">=</span>startxfce4 <span class="c1"># XFCE=startxfce4 GNOME=gnome-session DeepinDE=startdde</span>
+<span class="linenos">11</span>
 <span class="linenos">12</span><span class="c1">#__enable_clipboard_sync__</span>
 <span class="linenos">13</span><span class="k">if</span> <span class="o">[</span> -f /usr/bin/autocutsel <span class="o">]</span>
 <span class="linenos">14</span><span class="k">then</span>
@@ -286,6 +287,50 @@ not be able to control the mouse and keyboard.</p>
 <span class="linenos">33</span><span class="nb">exec</span> dbus-launch <span class="nv">$session</span>
 </pre></div>
 </div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/bin/sh</span>
+<span class="linenos">2</span><span class="c1"># Start Gnome 3 Desktop </span>
+<span class="linenos">3</span><span class="o">[</span> -x /etc/vnc/xstartup <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">exec</span> /etc/vnc/xstartup
+<span class="linenos">4</span><span class="o">[</span> -r <span class="nv">$HOME</span>/.Xresources <span class="o">]</span> <span class="o">&amp;&amp;</span> xrdb <span class="nv">$HOME</span>/.Xresources
+<span class="linenos">5</span>vncconfig -iconic <span class="p">&amp;</span>
+<span class="linenos">6</span>dbus-launch --exit-with-session gnome-session <span class="p">&amp;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
+<span class="linenos"> 2</span><span class="nb">unset</span> SESSION_MANAGER
+<span class="linenos"> 3</span><span class="nb">unset</span> DBUS_SESSION_BUS_ADDRESS
+<span class="linenos"> 4</span><span class="nb">export</span> <span class="nv">XKL_XMODMAP_DISABLE</span><span class="o">=</span><span class="m">1</span>
+<span class="linenos"> 5</span><span class="nb">export</span> <span class="nv">GTK_IM_MODULE</span><span class="o">=</span>fcitx
+<span class="linenos"> 6</span><span class="nb">export</span> <span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
+<span class="linenos"> 7</span><span class="nb">export</span> <span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>fcitx
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="c1">#__using_dde__</span>
+<span class="linenos">10</span><span class="nv">session</span><span class="o">=</span>startdde <span class="c1"># XFCE=startxfce4 GNOME=gnome-session DeepinDE=startdde</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1">#__enable_clipboard_sync__</span>
+<span class="linenos">13</span><span class="k">if</span> <span class="o">[</span> -f /usr/bin/autocutsel <span class="o">]</span>
+<span class="linenos">14</span><span class="k">then</span>
+<span class="linenos">15</span>    /usr/bin/autocutsel -fork
+<span class="linenos">16</span><span class="k">fi</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="c1">#__deepin_uos_activator__</span>
+<span class="linenos">19</span><span class="k">if</span> <span class="o">[</span> -f /usr/bin/uos-activator <span class="o">]</span>
+<span class="linenos">20</span><span class="k">then</span>
+<span class="linenos">21</span>    /usr/bin/uos-activator <span class="p">&amp;</span>
+<span class="linenos">22</span><span class="k">fi</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="c1">#__enable_fcitx__</span>
+<span class="linenos">25</span><span class="k">if</span> <span class="o">[</span> -f /usr/bin/fcitx <span class="o">]</span>
+<span class="linenos">26</span><span class="k">then</span>
+<span class="linenos">27</span>    <span class="o">(</span>sleep <span class="m">15</span> <span class="o">&amp;&amp;</span> /usr/bin/fcitx<span class="o">)</span> <span class="p">&amp;</span>
+<span class="linenos">28</span><span class="k">fi</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="c1">#__kill_user_apps_duplicated__</span>
+<span class="linenos">31</span>killall -9 v2ray <span class="p">&amp;</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="nb">exec</span> dbus-launch <span class="nv">$session</span>
+</pre></div>
+</div>
+</div></div>
 <p>Make the file executable</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ chmod +x xstartup
 </pre></div>
@@ -293,7 +338,7 @@ not be able to control the mouse and keyboard.</p>
 </div></blockquote>
 </li>
 </ol>
-<p><strong>Repeat all the step for all the users</strong> (eg. <cite>test2</cite>)</p>
+<p><strong>Repeat all the step for all the users</strong> (eg. <code class="docutils literal notranslate"><span class="pre">test2</span></code>)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you what to chage the VNC server password you can use the following command:</p>
@@ -304,15 +349,15 @@ not be able to control the mouse and keyboard.</p>
 </div>
 <div class="section" id="running-vnc-as-a-service-at-startup">
 <h2><span class="section-number">2.4. </span>Running VNC as a Service at startup<a class="headerlink" href="#running-vnc-as-a-service-at-startup" title="Permalink to this headline"></a></h2>
-<p>With this step we will make crate a <cite>systemd service</cite> that will start the VNC server at each boot.
+<p>With this step we will make crate a <code class="docutils literal notranslate"><span class="pre">systemd</span></code> <em>service</em> that will start the VNC server at each boot.
 Even this step has to be repeated for each user.</p>
 <ol class="arabic">
-<li><p>Make the <cite>Unit</cite> file.</p>
+<li><p>Make the <code class="docutils literal notranslate"><span class="pre">Unit</span></code> file.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /etc/systemd/system
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo vim vncserver_test1.service <span class="c1"># This is for the `test1` user</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo vim vncserver_test1.service <span class="c1"># This is for the ``test1`` user</span>
 </pre></div>
 </div>
 <p>copy and paste the following:</p>
@@ -332,7 +377,7 @@ Even this step has to be repeated for each user.</p>
 <span class="linenos">14</span>  <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
 </pre></div>
 </div>
-<p>replace <cite>USER</cite> with the user name (eg. test1) and <cite>PORT</cite> with a sequential number.
+<p>replace <code class="docutils literal notranslate"><span class="pre">USER</span></code> with the user name (eg. test1) and <code class="docutils literal notranslate"><span class="pre">PORT</span></code> with a sequential number.
 Below an example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="o">[</span>Unit<span class="o">]</span>
 <span class="linenos"> 2</span> <span class="nv">Description</span><span class="o">=</span>Remote desktop service <span class="o">(</span>VNC<span class="o">)</span>
@@ -352,8 +397,8 @@ Below an example:</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The number choose for <cite>PORT</cite> will correspond to the last number of the port where the VNC server will listening.
-For example if <cite>PORT</cite> is 1, the VNC server will be listening on port 5901.</p>
+<p>The number choose for <code class="docutils literal notranslate"><span class="pre">PORT</span></code> will correspond to the last number of the port where the VNC server will listening.
+For example if <code class="docutils literal notranslate"><span class="pre">PORT</span></code> is 1, the VNC server will be listening on port 5901.</p>
 </div>
 </div></blockquote>
 </li>
@@ -375,7 +420,7 @@ For example if <cite>PORT</cite> is 1, the VNC server will be listening on port 
 </div></blockquote>
 </li>
 </ol>
-<p><strong>Repeat all the step for all the users</strong> (eg. <cite>test2</cite>)</p>
+<p><strong>Repeat all the step for all the users</strong> (eg. <code class="docutils literal notranslate"><span class="pre">test2</span></code>)</p>
 <p>Now the VNC server is set and it is listening for one port per each user,
 you can restart the machine and check if the service start at the startup correctly.</p>
 </div>
@@ -391,26 +436,26 @@ you can restart the machine and check if the service start at the startup correc
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>With this command the port 5901 on local computer is connected with the 5901 of the server.
-Note that we connect with the <cite>USER</cite> test1, therefore we connect the port 5901 since we set <cite>PORT</cite> as 1 in the
-<cite>vncserver_test1.service</cite>.</p>
+Note that we connect with the <code class="docutils literal notranslate"><span class="pre">USER</span></code> test1, therefore we connect the port 5901 since we set <code class="docutils literal notranslate"><span class="pre">PORT</span></code> as 1 in the
+<code class="docutils literal notranslate"><span class="pre">vncserver_test1.service</span></code>.</p>
 </div>
 </div></blockquote>
 </li>
 <li><p>Download and install the VNC client, we are using <a class="reference external" href="https://www.realvnc.com/en/connect/download/viewer/">RealVNC Viewer</a>.</p></li>
-<li><p>Set the defoult qulity to <cite>High</cite>.</p>
+<li><p>Set the defoult qulity to <code class="docutils literal notranslate"><span class="pre">High</span></code>.</p>
 <blockquote>
 <div><ol class="loweralpha">
-<li><dl>
-<dt>Open RealVNC Preferences <cite>File &gt; Preferences..</cite>.</dt><dd><div class="figure align-center" id="id2">
+<li><p>Open RealVNC Preferences <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Preferences..</span></code>.</p>
+<blockquote>
+<div><div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/RealVNC_preference.png"><img alt="vnc" src="../../../../_images/RealVNC_preference.png" style="width: 75%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">RealVNC: Preference</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ol>
-<p>#. Go to the <cite>Expert</cite> preference, scroll the list until you find the  <cite>Quality</cite> entry and change the values
-from <cite>Auto</cite> to <cite>High</cite> (<cite>Expert &gt; Quality &gt; Value: High</cite>).</p>
+<p>#. Go to the <code class="docutils literal notranslate"><span class="pre">Expert</span></code> preference, scroll the list until you find the  <code class="docutils literal notranslate"><span class="pre">Quality</span></code> entry and change the values
+from <code class="docutils literal notranslate"><span class="pre">Auto</span></code> to <code class="docutils literal notranslate"><span class="pre">High</span></code> (<code class="docutils literal notranslate"><span class="pre">Expert</span> <span class="pre">&gt;</span> <span class="pre">Quality</span> <span class="pre">&gt;</span> <span class="pre">Value:</span> <span class="pre">High</span></code>).</p>
 <blockquote>
 <div><div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/RealVNC_quality.png"><img alt="vnc" src="../../../../_images/RealVNC_quality.png" style="width: 75%;" /></a>
@@ -418,19 +463,19 @@ from <cite>Auto</cite> to <cite>High</cite> (<cite>Expert &gt; Quality &gt; Valu
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p>Click on the button <cite>OK</cite> and close the preferences window.</p></li>
+<li><p>Click on the button <code class="docutils literal notranslate"><span class="pre">OK</span></code> and close the preferences window.</p></li>
 </ol>
 </div></blockquote>
 </li>
 <li><p>Connect to the VNC server.</p>
 <blockquote>
 <div><ol class="loweralpha">
-<li><p>Type on the upper bar the andress and press <cite>ENTER</cite>.</p>
+<li><p>Type on the upper bar the andress and press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>localhost:PORT
 </pre></div>
 </div>
-<p>Where <cite>PORT</cite> is the user VNC server port, e.g for the user <cite>test1</cite> is <cite>5901</cite>, (therfore it will be <cite>localhost:5901</cite>)</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">PORT</span></code> is the user VNC server port, e.g for the user <code class="docutils literal notranslate"><span class="pre">test1</span></code> is <code class="docutils literal notranslate"><span class="pre">5901</span></code>, (therfore it will be <code class="docutils literal notranslate"><span class="pre">localhost:5901</span></code>)</p>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/RealVNC_connecting.png"><img alt="vnc" src="../../../../_images/RealVNC_connecting.png" style="width: 75%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">RealVNC: Server andress</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
@@ -443,12 +488,15 @@ from <cite>Auto</cite> to <cite>High</cite> (<cite>Expert &gt; Quality &gt; Valu
 <a class="reference internal image-reference" href="../../../../_images/RealVNC_connecting_authentication.png"><img alt="vnc" src="../../../../_images/RealVNC_connecting_authentication.png" style="width: 75%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">RealVNC: Authentication pop-up</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>VNC will show a pop-up warning questioning the security of the connection.
 This happens because it does not recognize that we are using SSH (Secure SHell) tunneling to connect the two computers.
 Ignore it! The connection is secure because the SSH protocol encrypts all messages.</p>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div></blockquote>
 </li>
 <li><p>ENJOY IT!</p>
@@ -456,9 +504,6 @@ Ignore it! The connection is secure because the SSH protocol encrypts all messag
 <div><div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../_images/RealVNC_connected.png"><img alt="vnc" src="../../../../_images/RealVNC_connected.png" style="width: 75%;" /></a>
 </div>
-</div></blockquote>
-</li>
-</ol>
 </div></blockquote>
 </li>
 </ol>
