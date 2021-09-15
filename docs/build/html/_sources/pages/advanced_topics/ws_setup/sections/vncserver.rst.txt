@@ -109,6 +109,8 @@ Here we propose 3 possible options, from the simplest DE to the most aesthetic.
                 $ sudo apt install ubuntudde-dde
 
 
+
+
 .. _VNC - Set up VNC session for each user:
 
 Set up VNC session for each user
@@ -136,6 +138,10 @@ We will assume that on our machine there are 3 users ``test1``, ``test2`` and ``
     .. code-block:: bash 
 
             $ vncserver
+
+            You will require a password to access your desktops through VNC Clients.
+            Password:******
+            Verify:******
 
     You will be asked for the VNC server password – type your password. And for the "view-only" password, 
     you can enable or disable it. The user who logins to the server using the "view-only" password will 

@@ -27,7 +27,7 @@ Get Visual Studio Code
          Run (doble click) the ``VSCodeUserSetup-x64-x.xx.x.exe`` and follow the istructions.
 
       .. tab:: MacOS
-         
+
          Get Virtual studio code from packages menager ``brew``:
    
          .. code-block:: bash
@@ -42,6 +42,7 @@ Get Visual Studio Code
 
          Virtual Studio Code GUI.
    
+
 
 Add ``reStructuredText`` extension
 ----------------------------------
