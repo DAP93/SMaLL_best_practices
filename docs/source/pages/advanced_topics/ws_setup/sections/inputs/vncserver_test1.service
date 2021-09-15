@@ -1,0 +1,14 @@
+[Unit]
+ Description=Remote desktop service (VNC)
+ After=syslog.target network.target
+
+[Service]
+  Type=forking
+  User=test1
+  PIDFile=/home/test1/.vnc/%H:1.pid
+  ExecStartPre=-/usr/bin/vncserver -kill :1 > /dev/null 2>&1
+  ExecStart=/usr/bin/vncserver -depth 24 -geometry 1980x1080 :1
+  ExecStop=/usr/bin/vncserver -kill :1
+
+[Install]
+  WantedBy=multi-user.target

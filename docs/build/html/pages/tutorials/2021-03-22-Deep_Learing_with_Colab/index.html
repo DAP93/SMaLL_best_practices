@@ -1,89 +1,46 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>1. Deep Learing with Colab (an introduction) &mdash; SMaLL best practice latest documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/mystnb.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinx_tabs/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/togglebutton.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
-        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="prev" title="Tutorials" href="../index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../../index.html">
-          
-
-          
-            
             <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -91,19 +48,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quick_start/index.html">Quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced_topics/index.html">Advanced topics</a></li>
@@ -134,96 +80,50 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">SMaLL best practice</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../index.html">Tutorials</a> &raquo;</li>
-        
       <li><span class="section-number">1. </span>Deep Learing with Colab (an introduction)</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../_sources/pages/tutorials/2021-03-22-Deep_Learing_with_Colab/index.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <section id="deep-learing-with-colab-an-introduction">
-<h1><span class="section-number">1. </span>Deep Learing with Colab (an introduction)<a class="headerlink" href="#deep-learing-with-colab-an-introduction" title="Permalink to this headline">¶</a></h1>
+             
+  <div class="section" id="deep-learing-with-colab-an-introduction">
+<h1><span class="section-number">1. </span>Deep Learing with Colab (an introduction)<a class="headerlink" href="#deep-learing-with-colab-an-introduction" title="Permalink to this headline"></a></h1>
 <p>This tutorial demonstrates training a simple <a class="reference external" href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolutional Neural Network</a> (CNN) to classify <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST Dataset</a>.</p>
-<section id="cnn-in-a-glance">
-<h2><span class="section-number">1.1. </span>CNN in a glance<a class="headerlink" href="#cnn-in-a-glance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cnn-in-a-glance">
+<h2><span class="section-number">1.1. </span>CNN in a glance<a class="headerlink" href="#cnn-in-a-glance" title="Permalink to this headline"></a></h2>
 <p>The Convolutional Neural Network (CNN) is a class of Deep Learning Netower extensively used in image analysis (Computer Vision).
 The main feature is the Convolution Layer, which replaces the classic Perceptron (i.e., the “Neuron” of a Neural Network) with a “Filter”
 containing the “weights” that convolute the input from the previous layer <a class="reference internal" href="#cnn-example"><span class="std std-numref">Fig. 1.7</span></a>.</p>
-<figure class="align-center" id="id2">
+<div class="figure align-center" id="id2">
 <span id="cnn-example"></span><a class="reference internal image-reference" href="../../../_images/cnn.jpeg"><img alt="cnn" src="../../../_images/cnn.jpeg" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Example of CNN architecture to classify handwritten digits.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Example of CNN architecture to classify handwritten digits.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
 <p>Let see some possible <cite>layer</cite> that you can use in a CNN:</p>
-<section id="convolution-layer">
-<h3><span class="section-number">1.1.1. </span>Convolution layer<a class="headerlink" href="#convolution-layer" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="id3">
+<div class="section" id="convolution-layer">
+<h3><span class="section-number">1.1.1. </span>Convolution layer<a class="headerlink" href="#convolution-layer" title="Permalink to this headline"></a></h3>
+<div class="figure align-center" id="id3">
 <span id="cnn-covolution"></span><a class="reference internal image-reference" href="../../../_images/covolution_stride_padding.gif"><img alt="covolution" src="../../../_images/covolution_stride_padding.gif" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Convolutional layers example with differnt <code class="docutils literal notranslate"><span class="pre">stride</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> hyperparameters.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Convolutional layers example with differnt <code class="docutils literal notranslate"><span class="pre">stride</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> hyperparameters.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
 <p>The convolutional layer is the Neural Networks (NN) solution to replace the fully connected Perceptron layer.
 When dealing with n-dimensional tensor (with n &gt; 1), the memory required to build a classic NN raises fast and reaches a value that makes
 the use of this technique unuseful. The solution is, instead to connect each neuron to every input pixel, we use a <cite>filter</cite> (a.k.a. <cite>kernel</cite>)
@@ -236,28 +136,26 @@ When the stride is 2, then we move the filters to 2 pixels at a time and so on.<
 <p>Changin the <code class="docutils literal notranslate"><span class="pre">stride</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> chenge the output layer shape, and the output width or height can be compute with the
 <a class="reference internal" href="#equation-stide-padding">(1.1)</a></p>
 <div class="math notranslate nohighlight" id="equation-stide-padding">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-stide-padding" title="Permalink to this equation">¶</a></span>\[O = \dfrac{I - K + 2P}{S} +1\]</div>
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-stide-padding" title="Permalink to this equation"></a></span>\[O = \dfrac{I - K + 2P}{S} +1\]</div>
 <p>where <span class="math notranslate nohighlight">\(O\)</span> is the output width/height, <span class="math notranslate nohighlight">\(I\)</span> is the input width/height, <span class="math notranslate nohighlight">\(K\)</span> is the kernel size,
 <span class="math notranslate nohighlight">\(P\)</span> is teh padding and <span class="math notranslate nohighlight">\(S\)</span> is the stide.</p>
 <p>Note with a kernel of 3x3 (<span class="math notranslate nohighlight">\(K=3\)</span>) we have that settintg the <code class="docutils literal notranslate"><span class="pre">stride=None</span></code> and <code class="docutils literal notranslate"><span class="pre">padding=2</span></code> the input and output layer
 have the same size (this is usualy called “same” padding).</p>
-</section>
-<section id="pooling-layer">
-<h3><span class="section-number">1.1.2. </span>Pooling layer<a class="headerlink" href="#pooling-layer" title="Permalink to this headline">¶</a></h3>
-<figure class="align-center" id="id4">
+</div>
+<div class="section" id="pooling-layer">
+<h3><span class="section-number">1.1.2. </span>Pooling layer<a class="headerlink" href="#pooling-layer" title="Permalink to this headline"></a></h3>
+<div class="figure align-center" id="id4">
 <span id="cnn-pooling"></span><a class="reference internal image-reference" href="../../../_images/pooling.png"><img alt="covolution" src="../../../_images/pooling.png" style="width: 40%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Pooling layer.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Pooling layer.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
 <p>A pooling layer, <a class="reference internal" href="#cnn-pooling"><span class="std std-numref">Fig. 1.9</span></a>, is nothing but reducing the information size. While in convolution out NN is “learning” in this layer, we
 are reducing the data size. Therefore we are losing info, but we are highlighting the only feature that matters.</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
-<section id="colab">
-<h2><span class="section-number">1.2. </span>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="colab">
+<h2><span class="section-number">1.2. </span>Colab<a class="headerlink" href="#colab" title="Permalink to this headline"></a></h2>
 <p>Colab is a free Jupyter notebook environment that runs entirely in the cloud. Here we can use all the libraries available for python,
 and for working with the Neural network, we have a lot of them. To name some: <a class="reference external" href="https://scikit-learn.org/stable/index.html">scikit-learn</a>, <a class="reference external" href="https://pytorch.org/">pyThorch</a> and  <a class="reference external" href="https://www.tensorflow.org/">Tensorflow</a>.</p>
 <p>In this tutorial, we are going to use the latter one: <strong>Tensorflow (TF)</strong>.</p>
@@ -265,24 +163,20 @@ and for working with the Neural network, we have a lot of them. To name some: <a
 It is a Jupyter notebook; therefore, we can write and run the <cite>blocks</cite> element. These can be a <cite>code block</cite> or a <cite>text block</cite>, <a class="reference internal" href="#colab-block"><span class="std std-numref">Fig. 1.10</span></a>.
 In the first one, we can write everything is python readable, in the second everything si <a class="reference external" href="https://it.wikipedia.org/wiki/Markdown">Markdown</a>
 readable. To run the block, we can click on the “play” button on the side or use the shortcut <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code>.</p>
-<figure class="align-center" id="id5">
+<div class="figure align-center" id="id5">
 <span id="colab-block"></span><a class="reference internal image-reference" href="../../../_images/colab_block.png"><img alt="Coolab blocks view" src="../../../_images/colab_block.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Coolab blocks view.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Coolab blocks view.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
 <p>Before to everything, we have to set up the cloud driver, go to the “runtime” drop-down menu, select
 “change runtime type” and choose TPU in the hardware accelerator drop-down menu (<a class="reference internal" href="#colab-runtime"><span class="std std-numref">Fig. 1.11</span></a>).
 (TPU stand for Tensor Processing Unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google)</p>
-<figure class="align-center" id="id6">
+<div class="figure align-center" id="id6">
 <span id="colab-runtime"></span><a class="reference internal image-reference" href="../../../_images/runtime.png"><img alt="Change runtime type popup" src="../../../_images/runtime.png" style="width: 35%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Change runtime type popup.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="handwritten-number-recognition-with-cnn">
-<h2><span class="section-number">1.3. </span>Handwritten number recognition with CNN<a class="headerlink" href="#handwritten-number-recognition-with-cnn" title="Permalink to this headline">¶</a></h2>
+<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Change runtime type popup.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="handwritten-number-recognition-with-cnn">
+<h2><span class="section-number">1.3. </span>Handwritten number recognition with CNN<a class="headerlink" href="#handwritten-number-recognition-with-cnn" title="Permalink to this headline"></a></h2>
 <p>To build a NN, we go throw the following steps:</p>
 <ol class="arabic simple">
 <li><p>Environment set-up.</p></li>
@@ -294,8 +188,8 @@ readable. To run the block, we can click on the “play” button on the side or
 </ol>
 <p>For this tutorial, we are going to build a CNN to recognize the handwritten number present in the database MNIST.
 If you want to use the top in the market go to see the last model winner of the famous <a class="reference external" href="http://www.image-net.org/challenges/LSVRC/index">Image-Net</a> challenge</p>
-<section id="environment-set-up">
-<h3><span class="section-number">1.3.1. </span>Environment set-up<a class="headerlink" href="#environment-set-up" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="environment-set-up">
+<h3><span class="section-number">1.3.1. </span>Environment set-up<a class="headerlink" href="#environment-set-up" title="Permalink to this headline"></a></h3>
 <p>First of all let’s open a section by createing a new <em>Text block</em> and writing inside the code:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Libraries</span>
 </pre></div>
@@ -321,9 +215,9 @@ If you want to use the top in the market go to see the last model winner of the 
 <span class="go">Running on TPU  [&#39;10.115.241.50:8470&#39;]</span>
 </pre></div>
 </div>
-</section>
-<section id="data-collection-and-preprocessing">
-<span id="section-data-collection"></span><h3><span class="section-number">1.3.2. </span>Data collection and preprocessing<a class="headerlink" href="#data-collection-and-preprocessing" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="data-collection-and-preprocessing">
+<span id="section-data-collection"></span><h3><span class="section-number">1.3.2. </span>Data collection and preprocessing<a class="headerlink" href="#data-collection-and-preprocessing" title="Permalink to this headline"></a></h3>
 <p>In this part we downolad and look at out dataset.
 The MNIST (Modified database National Institute of Standards and Technology) is a collection of 70.000 handwritten 10-digit images,
 downsampled in size (28 × 28 pixels), in black and white and therefore with only one color channel.</p>
@@ -384,9 +278,9 @@ Since our data is in RGB thus assume an integer value between 0 to 255 we perfor
 <span class="gp">   ...: </span><span class="n">test_labels</span> <span class="o">=</span> <span class="p">(</span><span class="n">test_labels</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="model-building">
-<h3><span class="section-number">1.3.3. </span>Model building<a class="headerlink" href="#model-building" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="model-building">
+<h3><span class="section-number">1.3.3. </span>Model building<a class="headerlink" href="#model-building" title="Permalink to this headline"></a></h3>
 <p>Now we are going to build our basic CNN</p>
 <p>First, we open a new section of our Notebook.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Model building</span>
@@ -424,9 +318,9 @@ Since our data is in RGB thus assume an integer value between 0 to 255 we perfor
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="model-compiling">
-<h3><span class="section-number">1.3.4. </span>Model compiling<a class="headerlink" href="#model-compiling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="model-compiling">
+<h3><span class="section-number">1.3.4. </span>Model compiling<a class="headerlink" href="#model-compiling" title="Permalink to this headline"></a></h3>
 <p>Now we have to “compile” the model. Which means choose the loss fanction, the traingin strategy and optimizer (and learning rate),
 and the right metrics for the evaulation.</p>
 <ul class="simple">
@@ -450,9 +344,9 @@ and the right metrics for the evaulation.</p>
 <span class="gp">   ...: </span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="training">
-<h3><span class="section-number">1.3.5. </span>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="training">
+<h3><span class="section-number">1.3.5. </span>Training<a class="headerlink" href="#training" title="Permalink to this headline"></a></h3>
 <p>Since it is impossible to feed all our database in a one-shot, we split it into smaller sub-sets called <em>batch</em> then we train the model multiple times to allow the convergence.</p>
 <p>As usual let us open a new section:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Training</span>
@@ -489,9 +383,9 @@ and the right metrics for the evaulation.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../../_images/learning_curve.png"><img alt="learning curve" class="align-center" src="../../../_images/learning_curve.png" style="width: 70%;" /></a>
-</section>
-<section id="results">
-<h3><span class="section-number">1.3.6. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="results">
+<h3><span class="section-number">1.3.6. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline"></a></h3>
 <p>We can now visulize the result.</p>
 <p>As usual let us open a new section:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Results</span>
@@ -552,10 +446,10 @@ and the right metrics for the evaulation.</p>
 <span class="gp">   ...: </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="excercise">
-<h2><span class="section-number">1.4. </span>Excercise<a class="headerlink" href="#excercise" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="excercise">
+<h2><span class="section-number">1.4. </span>Excercise<a class="headerlink" href="#excercise" title="Permalink to this headline"></a></h2>
 <p>Following the same steps, build a similar CNN for the <em>Fashion MNIST</em> database <a class="reference external" href="https://github.com/zalandoresearch/fashion-mnist">https://github.com/zalandoresearch/fashion-mnist</a>.
 First test if all is working by only changing the <a class="reference external" href="Section_data_collection">Data collection and preprocessing</a> command with:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fashion_mnist</span>
@@ -573,54 +467,37 @@ First test if all is working by only changing the <a class="reference external" 
 <p>For help with all these tasks, consult the <a class="reference external" href="https://www.tensorflow.org/guide">Tensorflow Guide</a>, and the internet is full of answers to your question.</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Multi-Scale ModeLing Laboratory (SMaLL) POLITECNICO DI TORINO (Department of Energy &#34;Galileo Ferraris&#34; (DENERG)), ITA . All rights reserved.
-
-    </p>
+    <p>&#169; Copyright 2021, Multi-Scale ModeLing Laboratory (SMaLL) POLITECNICO DI TORINO (Department of Energy &#34;Galileo Ferraris&#34; (DENERG)), ITA . All rights reserved.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

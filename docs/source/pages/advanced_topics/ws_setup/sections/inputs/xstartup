@@ -1,0 +1,33 @@
+#!/bin/bash
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+export XKL_XMODMAP_DISABLE=1
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+#__using_dde__
+session=startxfce4 # XFCE=startxfce4 GNOME=gnome-session DeepinDE=startdde
+
+#__enable_clipboard_sync__
+if [ -f /usr/bin/autocutsel ]
+then
+    /usr/bin/autocutsel -fork
+fi
+
+#__deepin_uos_activator__
+if [ -f /usr/bin/uos-activator ]
+then
+    /usr/bin/uos-activator &
+fi
+
+#__enable_fcitx__
+if [ -f /usr/bin/fcitx ]
+then
+    (sleep 15 && /usr/bin/fcitx) &
+fi
+
+#__kill_user_apps_duplicated__
+killall -9 v2ray &
+
+exec dbus-launch $session

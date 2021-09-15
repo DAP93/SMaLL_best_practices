@@ -9,23 +9,40 @@ that can often make life easier.
 This guide shows you how to install on an Ubuntu system (20.04) the server (which is the machine you want to control) 
 and then use it with a client (RealVNC in this case) on any PC.
 
+.. figure:: ./img/vnc-x.gif
+         :width: 50 %
+         :alt: vnc
+         :align: center
+
+         A VNC server includes an X server that can communicate with local client programs.
+
+.. note::
+    Part of this Guide is an elaboration of the tutorials: 
+
+    #. `Enable multiuser logins with VNC <https://developer.ibm.com/tutorials/os-multiuserloginsvnc>`_
+    #. `How to Install and Configure VNC on Ubuntu 20.04 <https://linuxize.com/post/how-to-install-and-configure-vnc-on-ubuntu-20-04>`_
 
 VNC Server Installation
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
-Update everithing
+VNC is a cross-platform tool that can provide remote access to Linux, UNIX, Mac OS X, Windows and other 
+Operative Systems from any type of client. 
+On Linux there are several programs that allow your computer to become a VNC server, 
+in this guide we install one of the most used `TightVNC <https://en.wikipedia.org/wiki/TightVNC>`_.
 
-.. code-block:: bash 
+#. Update everithing
 
-    $ sudo apt update && sudo apt upgrade
+    .. code-block:: bash 
 
-Install the client `vnc4server`
+        $ sudo apt update && sudo apt upgrade
 
-.. code-block:: bash 
+#. Install the VNC server client TightVNC server
 
-    $ sudo apt install vnc4server
+    .. code-block:: bash 
 
-.. attention::
+        $ sudo apt install tightvncserver tigervnc-standalone-server
+
+.. warning::
     Please make sure that you are using only vnc-server and no other VNC-server are installed as 
     this could give errors in future mostly that clipboard sharing between the host Ubuntu Server & vnc-client machine. 
     You can check it as follows: 
@@ -33,6 +50,276 @@ Install the client `vnc4server`
     .. code-block:: bash 
 
         $ dpkg -l | grep vnc
+
+
+Install desktop environment (DE)
+--------------------------------
+
+In addition to VNC, the `desktop environment (DE) <https://en.wikipedia.org/wiki/Desktop_environment>`_ must be installed, which is necessary to be able to reproduce 
+the entire interface and manage the GUIs of the applications. 
+In the linux mode there are several options, so it's up to you. 
+Here we propose 3 possible options, from the simplest DE to the most aesthetic.
+
+
+.. tabs::
+
+    .. tab:: XFCE (fast)
+
+        `XFCE <https://en.wikipedia.org/wiki/Xfce>`_ is probably the fastest and lightest, while being visually appealing and easy to use DE.
+
+        #. Install XFCE DE
+
+            .. code-block:: bash 
+
+                $ sudo apt install xfce4 xfce4-goodies
+
+    .. tab:: GNOME (classic)
+
+        `GNOME 3 <https://en.wikipedia.org/wiki/GNOME>`_ is the default desktop environment on many major Linux 
+        distributions including Fedora, Debian, Ubuntu, etc.
+
+        #. Install GNOME DE
+
+            .. code-block:: bash 
+
+                $ sudo apt install ubuntu-gnome-desktop
+
+    .. tab:: Deepin DE (fancy)
+
+        `Deepin DE <https://en.wikipedia.org/wiki/Deepin#Deepin_Desktop_Environment>`_ was described as *"the single most beautiful desktop on the market"*
+        by Jack Wallen writing for TechRepublic. We are going to use the `Ubuntu Deepin DE <https://ubuntudde.com/>`_ since 
+        Ubuntu is the operating system of our workstation. 
+
+        #. First add UbuntuDDE PPA
+
+            .. code-block:: bash 
+
+                $ sudo add-apt-repository ppa:ubuntudde-dev/stable
+
+        #. Update the `apt` repository
+
+            .. code-block:: bash 
+
+                $ sudo apt update
+
+        #. Install UbuntuDDE 
+
+            .. code-block:: bash 
+
+                $ sudo apt install ubuntudde-dde
+
+
+.. _VNC - Set up VNC session for each user:
+
+Set up VNC session for each user
+--------------------------------
+
+To avoid interference between different users, the server must be set up for each user. 
+We will assume that on our machine there are 3 users `test1`, `test2` and `test3`.
+
+.. warning::
+        Please note, you are accessing the machine as several users using super user permissions. 
+        So be very careful and avoid doing any damage!
+
+#. Login to `test1` using the root privilages.
+
+    .. code-block:: bash 
+
+            $ sudo su # loging as super user
+
+    .. code-block:: bash    
+
+            $ su - test1 # loging as test1
+
+#. Now initiate the vnc configuration for `test1`. This will create the hidden folder `.vnc` with all the default configuration files.
+
+    .. code-block:: bash 
+
+            $ vncserver
+
+    You will be asked for the VNC server password – type your password. And for the "view-only" password, 
+    you can enable or disable it. The user who logins to the server using the "view-only" password will 
+    not be able to control the mouse and keyboard.
+    
+    Now we kill the server that we just start:
+
+    .. code-block:: bash 
+
+            $ vncserver -kill :*
+
+#. Change the configuration file.
+
+    .. code-block:: bash 
+
+            $ cd $HOME/.vnc
+
+    .. code-block:: bash
+
+            $ vim xstartup
+
+    Inside the file copy and paste the following line, and chage the row 10 to set the choose Desktop Environment.
+
+    .. literalinclude:: ./inputs/xstartup
+        :language: bash
+        :emphasize-lines: 10
+        :linenos:
+
+    Make the file executable
+
+    .. code-block:: bash
+
+            $ chmod +x xstartup
+
+**Repeat all the step for all the users** (eg. `test2`)
+
+.. note::
+    If you what to chage the VNC server password you can use the following command:
+
+    .. code-block:: bash
+
+            $ vncpasswd
+
+
+Running VNC as a Service at startup
+-----------------------------------
+
+With this step we will make crate a `systemd service` that will start the VNC server at each boot.
+Even this step has to be repeated for each user.
+
+#. Make the `Unit` file.
+
+    .. code-block:: bash
+
+            $ cd /etc/systemd/system
+
+    .. code-block:: bash
+
+            $ sudo vim vncserver_test1.service # This is for the `test1` user
+
+    copy and paste the following:
+
+    .. literalinclude:: ./inputs/vncserver_test1.template
+        :language: bash
+        :emphasize-lines: 7-11
+        :linenos:
+
+    replace `USER` with the user name (eg. test1) and `PORT` with a sequential number.
+    Below an example:
+
+    .. literalinclude:: ./inputs/vncserver_test1.service
+        :language: bash
+        :emphasize-lines: 7-11
+        :linenos:
+
+    .. warning::
+        The number choose for `PORT` will correspond to the last number of the port where the VNC server will listening.
+        For example if `PORT` is 1, the VNC server will be listening on port 5901.
+
+#. Reload and start the service.
+
+    .. code-block:: bash
+
+        sudo systemctl daemon-reload
+
+    .. code-block:: bash
+
+        sudo systemctl start vncserver_test1.service
+
+    Assuming everything goes error-free, add the service to the boot time and check the service status using systemctl.
+
+    .. code-block:: bash
+
+        sudo systemctl enable vncserver_test1.service
+    
+    .. code-block:: bash
+
+        sudo systemctl status vncserver_test1.service
+
+**Repeat all the step for all the users** (eg. `test2`)
+
+Now the VNC server is set and it is listening for one port per each user, 
+you can restart the machine and check if the service start at the startup correctly.
+
+
+Connect to the VNC Server Through SSH Tunnel
+--------------------------------------------
+
+#. Open the SSH Tunnel.
+
+    Open your terminal and type the ssh command as below
+
+    .. code-block:: bash
+
+        ssh -L 5901:localhost:5901 -N -f test1@denerg33078.polito.it
+
+    .. note::
+        With this command the port 5901 on local computer is connected with the 5901 of the server. 
+        Note that we connect with the `USER` test1, therefore we connect the port 5901 since we set `PORT` as 1 in the 
+        `vncserver_test1.service`.
+
+#. Download and install the VNC client, we are using `RealVNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_.
+
+#. Set the defoult qulity to `High`.
+
+    a. Open RealVNC Preferences `File > Preferences..`.
+        .. figure:: ./img/RealVNC_preference.png
+         :width: 75 %
+         :alt: vnc
+         :align: center
+
+         RealVNC: Preference 
+
+    #. Go to the `Expert` preference, scroll the list until you find the  `Quality` entry and change the values 
+    from `Auto` to `High` (`Expert > Quality > Value: High`).
+        .. figure:: ./img/RealVNC_quality.png
+         :width: 75 %
+         :alt: vnc
+         :align: center
+
+         RealVNC: Expert dialogue window
+
+    #. Click on the button `OK` and close the preferences window.
+    
+#. Connect to the VNC server.
+
+    a. Type on the upper bar the andress and press `ENTER`.
+
+        .. code-block:: bash
+
+            localhost:PORT
+
+        Where `PORT` is the user VNC server port, e.g for the user `test1` is `5901`, (therfore it will be `localhost:5901`) 
+
+        .. figure:: ./img/RealVNC_connecting.png
+         :width: 75 %
+         :alt: vnc
+         :align: center
+
+         RealVNC: Server andress
+
+    #. Type the VNC server password, that you set during the :ref:`set up of the VNC session <VNC - Set up VNC session for each user>`
+
+        .. figure:: ./img/RealVNC_connecting_authentication.png
+         :width: 75 %
+         :alt: vnc
+         :align: center
+
+         RealVNC: Authentication pop-up
+
+        .. note::
+            VNC will show a pop-up warning questioning the security of the connection. 
+            This happens because it does not recognize that we are using SSH (Secure SHell) tunneling to connect the two computers. 
+            Ignore it! The connection is secure because the SSH protocol encrypts all messages.
+
+    #. ENJOY IT!
+
+        .. figure:: ./img/RealVNC_connected.png
+         :width: 75 %
+         :alt: vnc
+         :align: center
+
+
+
 
 
 .. toctree::

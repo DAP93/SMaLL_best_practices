@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('_custom_modules')) # import local folder
 #import sphinx_fontawesome
 import sphinx_rtd_theme
 
@@ -39,7 +39,8 @@ extensions = [
     'sphinx.ext.ifconfig', 'sphinx.ext.intersphinx', 'sphinx.ext.viewcode',
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive', 'myst_nb', 'sphinx.ext.extlinks',
-    'sphinx.ext.mathjax', 'sphinx_copybutton', 'sphinx_panels', 'sphinx_tabs.tabs',
+    'sphinx.ext.mathjax', 'sphinx_copybutton', 'sphinx_panels', 
+    'sphinx_tabs.tabs', #'sphinx_tabs.tabs',
     'sphinx_rtd_theme', 'sphinx_typo3_theme',
     #'sphinx_fontawesome'
 ]
@@ -52,8 +53,14 @@ copybutton_selector = 'div:not(.no-copy)>div.highlight pre'
 copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
 #copybutton_prompt_text = '>>> |\\\\$ |In \\\\[\\\\d+\\\\]: |\\\\s+\\.\\.\\.: '
 copybutton_prompt_is_regexp = True
+# copybutton_only_copy_prompt_lines = True
+# copybutton_image_path = 'copy-button-yellow.svg'
+# copybutton_remove_prompts = True
+
 
 sphinx_tabs_valid_builders = ['linkcheck']
+sphinx_tabs_disable_tab_closing = True
+# sphinx_tabs_disable_css_loading = True
 
 todo_include_todos = True
 
