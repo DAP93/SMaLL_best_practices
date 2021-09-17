@@ -347,5 +347,7 @@ Connect to the VNC Server Through SSH Tunnel
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
+   :glob:
    :hidden:
+   :caption: Contents

@@ -9,6 +9,8 @@ cillum dolore eu fugiat nulla pariatur.
 
 .. toctree::
    :maxdepth: 2
+   :glob:
    :numbered:
+   :caption: Table of Contents
    
    ./sections/basics

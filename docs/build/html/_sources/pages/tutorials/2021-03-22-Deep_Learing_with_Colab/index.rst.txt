@@ -77,9 +77,6 @@ Pooling layer
 A pooling layer, :numref:`cnn_pooling`, is nothing but reducing the information size. While in convolution out NN is "learning" in this layer, we 
 are reducing the data size. Therefore we are losing info, but we are highlighting the only feature that matters. 
 
-.. toctree::
-    :maxdepth: 2
-    :hidden:
 
 Colab
 -----
@@ -472,6 +469,9 @@ For help with all these tasks, consult the `Tensorflow Guide <https://www.tensor
 
 
 .. toctree::
-    :maxdepth: 3
-    :hidden:
+   :maxdepth: 5
+   :glob:
+   :hidden:
+   :caption: Contents
+
 

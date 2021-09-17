@@ -11,7 +11,10 @@ cillum dolore eu fugiat nulla pariatur.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
+   :glob:
    :hidden:
+   :caption: Contents
+
 
   

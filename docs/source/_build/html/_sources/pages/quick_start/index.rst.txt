@@ -74,8 +74,11 @@ cillum dolore eu fugiat nulla pariatur.
    :badge:`to do [0 %],badge-danger badge-pill`   
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 5
+   :glob:
+   :hidden:
+   :caption: Contents
+
 
    ./python/index
    ./linux/index

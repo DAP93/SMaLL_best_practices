@@ -8,7 +8,9 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
+   :glob:
    :hidden:
+   :caption: Contents
 
   

@@ -70,7 +70,7 @@ The official page of `SMaLL Team`_ documentation.
          :text: Workststions guide
          :classes: btn-outline-dark btn-block stretched-link
 
-   :badge:`to do [0 %],badge-danger badge-pill`
+   :badge:`doing [5 %],badge-warning badge-pill`
 
    ---
    :column: col-lg-3 col-xs-12 pl-0 pr-0
@@ -110,7 +110,7 @@ The official page of `SMaLL Team`_ documentation.
       :text: Set up workstation from scratch
       :classes: btn-outline-dark btn-block stretched-link
 
-   :badge:`to do [0 %],badge-danger badge-pill`
+   :badge:`doing [5 %],badge-warning badge-pill`
    
    ---
    :column: col-lg-4 col-xs-12 pl-0 pr-0
@@ -162,11 +162,11 @@ The official page of `SMaLL Team`_ documentation.
    
 
 
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :glob:
-   :caption: Contents:
+   :hidden:
+   :caption: Contents
 
    ./pages/quick_start/*
    ./pages/advanced_topics/*

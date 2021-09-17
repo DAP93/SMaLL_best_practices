@@ -59,9 +59,11 @@ cillum dolore eu fugiat nulla pariatur.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :glob:
-   :caption: Contents:
+   :hidden:
+   :caption: Contents
+
 
    ./ws_setup/index
    ./hpc/index

@@ -156,9 +156,11 @@ The official page of `SMaLL Team`_ documentation!
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :glob:
-   :caption: Contents:
+   :hidden:
+   :caption: Contents
+
 
    ./pages/quick_start/*
    ./pages/advanced_topics/*

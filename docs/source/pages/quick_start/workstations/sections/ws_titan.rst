@@ -34,7 +34,10 @@ Tensorflow 2
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
+   :glob:
    :hidden:
+   :caption: Contents
+
 
   

@@ -8,8 +8,10 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. 
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :glob:
    :numbered:
+   :caption: Table of Contents
    
    ./sections/basics
 
